@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>YogBooking.com</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
+  <!-- CSS  -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="{% static 'css/materialize.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="screen,projection"/>
+<style media="screen">
+.footer-design{
+  position: relative;
+
+  width: 100%;
+  height: auto;
+  background: #63786E;
+}
+.footerdata {
+  padding:5px;
+  margin-left:30px;
+}
+
+*{
+  font-family: 'Raleway', sans-serif;
+}
+.menu{
+  position: relative;
+  width: 100%;
+  left: 20%;
+  background: transparent;
+  height: 50px;
+}
+.white-text li{
+  color: white;
+  font-weight: bold;
+  padding: 0px;
+  float: left;
+
+}
+.drop li{
+  font-size: 20px;
+  color: red;
+}
+.footer-copyright{
+  width: 100%;
+  position: relative;
+  top:20px;
+  height: 40px;
+  background: #009688;
+}
+li{
+  float: left;
+  padding: 10px;
+}
+.copyright_para{
+  position: relative;
+  float: right;
+  top: -25px;
+  margin-right: 20px;
+}
+.subscribe{
+  width: 100px;
+  height: 150px;
+  background: transparent;
+  float: right;
+}
+.yog{
+  margin-left: 20%;
+  color: #63E2A5;
+  font-weight: bold;
+}
+.logodiv{
+  width: 200px;
+  height: 35px;
+  background: transparent;
+  position: relative;
+  left: 30%;
+  top: -30px;
+  margin-bottom: -30px;
+}
+.logoicon{
+  width: 30px;
+  margin: 3px;
+  margin-left: 15px;
+  padding: 2px;
+}
+.yoglogo{
+  width: 90px;
+  height: 30px;
+  background: transparent;
+  position: absolute;
+  left: -10%;
+  top: -15px;
+
+}
+.yoglogom{
+  width: 90px;
+  height: 60px;
+  background: transparent;
+  position: relative;
+  left: -8%;
+}
+
+#yoglogo{
+  width: 150px;
+}
+</style>
+</head>
+<body>
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+
+      <a id="logo-container" href="#" class="brand-logo"></a>
+      <ul class="right hide-on-med-and-down">
+        <div class="yoglogo">
+          <a href="#"> <img id="yoglogo" src="{% static 'images/finallogo.png' %}" alt=""> </a>
+        </div>
+        <li class="collection-item"><a href="{% url 'index' %}">Home</a></li>
+        <li class="collection-item"><a href="{% url 'services' %}">Service</a></li>
+        <li class="collection-item"><a href="{% url 'event' %}">Event</a></li>
+          <li class="collection-item"><a class="dropbtn" href="{% url 'register' %}">Apply</a></li>
+          
+        <li class="collection-item"><a href="{% url 'shop' %}">Shop</a></li>
+        <li class="collection-item"><a href="{% url 'about' %}">About</a></li>
+        <li class="collection-item"><a href="{% url 'contact' %}">Contact</a></li>
+        <a class="waves-effect waves-light btn-small" style="border-radius: 30px">book Now</a>
+        <a href="{% url 'login' %}" class="waves-effect waves-light btn-small" style="border-radius: 30px">Login</a>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <div class="yoglogom">
+          <a href="#"> <img id="yoglogo" src="{% static 'images/finallogo.png' %}" alt=""> </a>
+        </div>
+        <li><a href="#">Home</a></li>
+        <li><a href="{% url 'services' %}">Service</a></li>
+        <li><a href="{% url 'events' %}">Event</a></li>
+        <li><a href="#">Apply</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  {% block content %}
+
+  {% block custom %}
+
+  {% endblock %}
+
+  {% endblock %}
+
+<footer class="footer-design">
+  <div class="container-flued">
+    <div class="row">
+      <div class="col">
+        <h4 class="yog">YogBooking.com</h2>
+
+      </div>
+  <div class="col">
+    <div class="menu">
+      <ul>
+      <li><a class="white-text" href="#"><b>Home</b></a></li>
+      <li class='drop white-text'>Service</a></li>
+      <li><a class="white-text" href="{% url 'events' %}">Event</a></li>
+      <li><a class="white-text" href="#">Apply</a></li>
+        <li><a class="white-text" href="#">Shop</a></li>
+      <li><a class="white-text" href="{% url 'about' %}">About</a></li>
+      <li><a class="white-text" href="{% url 'contact' %}">Contact</a></li>
+    </ul>
+
+    </div>
+
+  </div>
+  <div class="subscribe">
+
+
+  </div>
+    </div>
+    <div class="row">
+      <div class="footer-copyright">
+        <div class="footerdata">
+          <a class="white-text" href="#"><b>Privacy Policy</b></a>
+          <a class="white-text" href="#" id="footer_data_a"><b>User Agreement</b></a>
+        </div>
+        <div class="logodiv">
+        <a href="#">  <img class="logoicon" src="{% static 'images/facebook.png' %}" alt="fgdfgs"></a>
+        <a href="#">  <img class="logoicon" src="{% static 'images/instagram.png' %}" alt="fgdfgs"></a>
+        <a href="#">  <img class="logoicon" src="{% static 'images/facebook.png' %}" alt="fgdfgs"></a>
+        </div>
+        <div class="copyright_para">
+           <a class="white-text" href="#"><b>© 2020 YogBooking.com All Rights Reserved.</b></a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</footer>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="{% static 'js/materialize.js' %}"></script>
+  <script src="{% static 'js/init.js' %}"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends 'yogbookingapp/master.html' %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  {% for s in services %}
+  {{s.name}}
+  {% endfor %}
+  </body>
+</html>
+{% endblock %}

@@ -1,0 +1,188 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <style media="screen">
+
+.get-in-touch {
+  max-width: 800px;
+  margin: 50px auto;
+  position: relative;
+
+}
+.get-in-touch .title {
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 3.2em;
+  line-height: 48px;
+  padding-bottom: 48px;
+     color: #5543ca;
+    background: #5543ca;
+    background: -moz-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
+    background: -webkit-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
+    background: linear-gradient(to right,#f4524d  0%,#5543ca  100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+}
+
+.contact-form .form-field {
+  position: relative;
+  margin: 32px 0;
+}
+.contact-form .input-text {
+  display: block;
+  width: 100%;
+  height: 36px;
+  border-width: 0 0 2px 0;
+  border-color: #5543ca;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+}
+.contact-form .input-text:focus {
+  outline: none;
+}
+.contact-form .input-text:focus + .label,
+.contact-form .input-text.not-empty + .label {
+  -webkit-transform: translateY(-24px);
+          transform: translateY(-24px);
+}
+.contact-form .label {
+  position: absolute;
+  left: 20px;
+  bottom: 11px;
+  font-size: 18px;
+  line-height: 26px;
+  font-weight: 400;
+  color: #5543ca;
+  cursor: text;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out,
+  -webkit-transform .2s ease-in-out;
+}
+.contact-form .submit-btn {
+  display: inline-block;
+  background-color: #000;
+   background-image: linear-gradient(125deg,#a72879,#064497);
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 16px;
+  padding: 8px 16px;
+  border: none;
+  width:200px;
+  cursor: pointer;
+}
+
+
+  </style>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+  <body>
+<div class="container">
+  <div class="row">
+
+  <section class="get-in-touch">
+     <h1 class="title">Apply for Instructor</h1>
+     <form class="contact-form row" method="POST">
+       {% csrf_token %}
+        <div class="form-field col-lg-6">
+           <input name="name" class="input-text js-input" type="text" required>
+           <label class="label" for="name">Name</label>
+        </div>
+        <div class="form-field col-lg-6">
+           <input name="fname" class="input-text js-input" type="text" required>
+           <label class="label" for="name">Father's Name</label>
+        </div>
+        <div class="form-field col-lg-6 ">
+           <input name="email" class="input-text js-input" type="email" required>
+           <label class="label" for="email">E-mail</label>
+        </div>
+
+         <div class="form-field col-lg-6 ">
+           <input name="aadhar" class="input-text js-input" type="text" required>
+           <label class="label" for="aadhar">Aadhar Number</label>
+        </div>
+        <div class="form-field col-lg-6 ">
+          <input name="mobile" class="input-text js-input" type="text" required>
+          <label class="label" for="phone">Contact Number</label>
+       </div>
+       <div class="form-field col-lg-6 ">
+         <input name="city" class="input-text js-input" type="text" required>
+         <label class="label" for="phone">City</label>
+      </div>
+        <div class="form-field col-lg-12">
+           <input name="address" class="input-text js-input" type="text" required>
+           <label class="label" for="address">Address </label>
+        </div>
+        <div class="form-field col-lg-6 ">
+          <input name="qualification" class="input-text js-input" type="text" required>
+          <label class="label" for="phone">Qualification</label>
+       </div>
+        <div class="form-field col-lg-6 ">
+          <input name="experiance" class="input-text js-input" type="text" required>
+          <label class="label" for="phone">Experiance</label>
+       </div>
+       <div class="form-field col-lg-6 ">
+         <input name="password" class="input-text js-input" type="password" required>
+         <label class="label" for="phone">Password</label>
+      </div>
+       <div class="form-field col-lg-6 ">
+         <input name="dob" class="input-text js-input" type="date" required>
+         <label class="label" for="phone">DOB</label>
+      </div>
+      <div class="form-field col-lg-12 ">
+        <input name="jobloc" class="input-text js-input" type="text" required>
+        <label class="label" for="phone">Job Location</label>
+     </div>
+     <div class="custom-file">
+        <input type="file" name="resume" class="custom-file-input" id="inputGroupFile01">
+        <label class="custom-file-label" for="inputGroupFile01">Upload Resume</label>
+      </div>
+     <div class="custom-file">
+        <input type="file" name="profile" class="custom-file-input" id="inputGroupFile01">
+        <label class="custom-file-label" for="inputGroupFile01">Profile Picture</label>
+      </div>
+     <div class="forimage">
+       <h5>Upload Four Images doing Yoga..</h5>
+
+     </div>
+<div class="custom-file">
+   <input type="file" name="pic1" class="custom-file-input" id="inputGroupFile01">
+   <label class="custom-file-label" for="inputGroupFile01">Upload Picture 1</label>
+ </div>
+ <div class="custom-file">
+    <input type="file" name="pic2" class="custom-file-input" id="inputGroupFile01">
+    <label class="custom-file-label" for="inputGroupFile01">Upload Picture 1</label>
+  </div>
+
+ <div class="custom-file">
+    <input type="file" name="pic3" class="custom-file-input" id="inputGroupFile01">
+    <label class="custom-file-label" for="inputGroupFile01">Upload Picture 1</label>
+  </div>
+  <div class="custom-file">
+     <input type="file" name="pic4" class="custom-file-input" id="inputGroupFile01">
+     <label class="custom-file-label" for="inputGroupFile01">Upload Picture 1</label>
+   </div>
+
+
+        <div class="form-field col-lg-12">
+           <input class="submit-btn" type="submit" value="Sign Up">
+        </div>
+     </form>
+  </section>
+
+  </div>
+
+</div>
+
+  </body>
+</html>

@@ -1,0 +1,65 @@
+{% extends 'yogbookingapp/master.html' %}
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+<style media="screen">
+  .sheader{
+    width: 100%;
+    height: 200px;
+    background: white;
+  }
+  .headtext{
+    color: #009688;
+    text-align: center;
+  }
+</style>
+
+  </head>
+  <body>
+    <div class="sheader">
+      <div class="text">
+        <h3 class="headtext">Our Services</h3>
+      </div>
+
+    </div>
+<div class="container">
+
+    <div class="row">
+      {% for i in services %}
+    <div class="col s12 cardbackg m4">
+      <div class="card small"  data-aos="fade-up">
+        <div class="card-image">
+          <img src="/media/{{i.image}}" alt="..no image..">
+          <span class="card-title">{{i.name}}</span>
+
+        </div>
+        <div class="card-content">
+          <p>{{i.description}}</p>
+        </div>
+        <div class="card-action">
+          <a href="{% url i.id %}">See More..</a>
+            <p>media/{{i.image}}</p>
+        </div>
+      </div>
+    </div>
+      {% endfor %}
+  </div>
+
+</div>
+<style media="screen">
+
+  .cardbackg:hover{
+    background: #f2f2f2;
+  }
+
+</style>
+
+
+
+  </body>
+</html>
+{% endblock %}
