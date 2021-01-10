@@ -7,10 +7,9 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.index,name='index'),
     path('services',views.services,name = 'services'),
-    path('events',views.events,name = 'events'),
     path('about/',views.about,name = 'about'),
     path('Contact/',views.contact,name = 'contact'),
-    path('Event/',views.events,name = 'event'),
+    path('Events/',views.events,name = 'event'),
     path('shop/',views.shop,name = 'shop'),
     path('dailyyoga',views.dailyyoga,name="dailyyoga"),
     path('onlineyogaclasses',views.onlineyoga,name="onlineyoga"),
@@ -20,5 +19,6 @@ urlpatterns = [
     path('groupyoga',views.groupyoga,name="groupyoga"),
     path('parkyoga',views.parkyoga,name="parkyoga"),
     path('kidyoga',views.kidyoga,name="kidyoga"),
+    path('BookNow',views.bookinstructor,name="bookinstructor")
 
 ]

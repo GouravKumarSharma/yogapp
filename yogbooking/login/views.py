@@ -27,11 +27,13 @@ def register(request):
         pic4=request.POST['pic4']
         password=request.POST['password']
 
-        user=Instructor(name,fathers_name,aadhar,mobile,dob,email,joblocation,qualification,address,experiance,city,resume,profile,pic1,pic2,pic3,pic4)
-        user.save()
+        #user=Instructor(name,fathers_name,aadhar,mobile,dob,email,joblocation,qualification,address,experiance,city,resume,profile,pic1,pic2,pic3,pic4)
+        #user.save()
         return redirect('loginapp')
     else:
         return render(request,'register.html')
 
 
     return render(request,'register.html')
+def registerstudent(request):
+    return render(request,'regstudent.html')

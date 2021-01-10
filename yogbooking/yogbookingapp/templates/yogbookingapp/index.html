@@ -1,88 +1,185 @@
 {% extends 'yogbookingapp/master.html' %}
 {% load static %}
 {% block content %}
-<div id="index-banner" class="parallax-container">
-  <div data-aos="fade-up" class="section no-pad-bot">
-    <div class="container">
-      <br><br>
-      <h1 class="header center teal-text text-lighten-2">Yog Booking</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">Book your Yog Instructor...</h5>
-      </div>
-      <div class="row center">
-        <a href="about.html" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Get Started</a>
-      </div>
-      <br><br>
+<style media="screen">
 
-    </div>
-  </div>
-  <div class="parallax"><img src="{% static 'images/image.jpeg' %}" alt="Unsplashed background img 1"></div>
-</div>
+</style>
 
-
-<div class="container">
-  <div class="section">
-
-    <!--   Icon Section   -->
-    <div class="row">
-      <div class="col s12 m5">
-        <div data-aos="fade-right" class="card-panel teal">
-          <h5 style="color: yellow">Daily Drop Yoga Classes</h5>
-          <span class="white-text">
-
-Benefits of Yoga - Practice Yoga Daily Be Healthy Learn Yoga & Meditation To Get Betterment In Your Life,
- It Give You Healthy Mind & Peace. Benefits of Yoga,
- Practice Yoga Daily Be Healthy, Popular Yoga Benefits.
-  Yoga therapy. Certified Yoga Teacher.
-   Yoga Training Classes. <a href="#" class="yellow-text">see more...</a>
-          </span>
+    <div class="site-blocks-cover overlay inner-page-cover" style="background-image: url('{% static 'images/image.jpeg' %}');" data-stellar-background-ratio="0.5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-7 text-center" data-aos="fade-up">
+            <h1>Maintain the beauty of your soul and body by learning Yoga!</h1>
+          <a href="{% url 'bookinstructor' %}" class="btn btn-info btn-lg btn-round" href="#">Book Now</a>
+          </div>
         </div>
       </div>
-      </div>
-
     </div>
-
-  </div>
-</div>
-
-
-<div data-aos="fade-up" class="parallax-container valign-wrapper">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <div class="row center">
-        <h5 class="header col s12 light">love to Write code..</h5>
-      </div>
+    <div class="site-block-profile-pic om" data-aos="fade" data-aos-delay="200">
+      <a href="about.html"><img src="{% static 'tem/images/om.jpeg' %}" alt="Image"></a>
     </div>
-  </div>
-  <div class="parallax"><img src="{% static 'images/background2.jpg' %}" alt="Unsplashed background img 2"></div>
-</div>
-
-<div class="container">
-  <div class="section">
-
-    <div class="row">
-      <div class="col s12 center">
-        <h3><i class="mdi-content-send brown-text"></i></h3>
-        <h4>Contact Us</h4>
-        <p class="left-align light">               </p>
+<div class="site-section" data-aos="fade">
+      <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 ">
+              <h2 class="site-section-heading text-center">योग: कर्मसु कौशलम् </h2>
+            </div>
           </div>
-    </div>
+        <div class="row">
+          <div class="col-md-6">
+            <div class="site-block-half d-lg-flex">
+              <div class="image" style="background-image: url('{% static 'images/vector-woman-in-yoga-pose.jpg' %}');"></div>
+              <div class="text">
+                <h3>Bitilasana <br>(bee-tee-LAHS-uh-nuh)</h3>
+                <p>For a gentle warm-up sequence. When practiced together, the poses help to stretch the body and prepare it for other activity.
 
-  </div>
-</div>
+</p>
+              </div>
+            </div>
+            <div class="site-block-half d-lg-flex">
+              <div class="image" style="background-image: url('{% static 'images/yoga class 4-01.jpg' %}');background-size:100% 95%;background-repeat:no-repeat;"></div>
 
-
-<div class="parallax-container valign-wrapper">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <div class="row center">
-        <h5 class="header col s12 light">
-
+              <div class="text">
+                <h3>Portrait Photography</h3>
+                <p>Sunt nesciunt repellat molestias vitae nostrum aliquid laudantium quo voluptatem provident voluptate tenetur illo.</p>
+              </div>
+            </div>
           </div>
+          <div class="col-md-6">
+            <div class="site-block-half d-lg-flex">
+              <div class="image" style="background-image: url('{% static 'images/yoga class 7-01.jpg' %}');background-repeat:no-repeat;"></div>
+              <div class="text">
+                <h3>Ananda Balasana</h3>
+                <p>This is a gentle and soothing pose that’s great for increasing relaxation and stretching the body.                                         </p>
+              </div>
+            </div>
+            <div class="site-block-half d-lg-flex">
+              <div class="image" style="background-image: url('{% static 'images/yoga class 9-01.jpg' %}');"></div>
+              <div class="text">
+                <h3>Food & Drink Photography</h3>
+                <p>Sunt nesciunt repellat molestias vitae nostrum aliquid laudantium quo voluptatem provident voluptate tenetur illo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="parallax"><img src="{% static 'images/download.jpeg' %}" alt="Unsplashed background img 3"></div>
-</div>
+    <div class="py-5 site-block-testimonial" style="background-image: url('{% static 'images/h1.jpg' %}');" data-stellar-background-ratio="0.5">
+     <div class="container">
+       <div class="row block-13 mb-5">
+         <div class="col-md-12 text-center" data-aos="fade">
+           <div class="nonloop-block-13 owl-carousel">
+              <div class="block-testimony">
+                <img src="{% static 'tem/images/person_1.jpg' %}" alt="Image" class="img-fluid">
+                <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident suscipit dicta repellat, sit aut at nulla quam sed, neque voluptatum deserunt, vero ipsum natus sint culpa illo. Vel, sed, assumenda.&rdquo;</p>
+                <p class="small">&mdash; Aakash Dhiman</p>
+              </div>
+              <div class="block-testimony">
+                <img src="{% static 'tem/images/person_2.jpg' %}" alt="Image" class="img-fluid">
+                <p>&ldquo;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Provident suscipit dicta repellat, sit aut at nulla quam sed, neque voluptatum deserunt, vero ipsum natus sint culpa illo. Vel, sed, assumenda.&rdquo;</p>
+                <p class="small">&mdash; Aashish Antal</p>
+              </div>
+
+            </div>
+         </div>
+       </div>
+     </div>
+    </div>
+
+    <div class="site-section border-bottom">
+      <div class="container">
+        <div class="row text-center justify-content-center mb-5">
+          <div class="col-md-7" data-aos="fade-up">
+            <h2>The Best Yoga Poses For Flexibility</h2>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+            <a class="image-gradient" href="single.html">
+              <figure>
+                <img src="{% static 'images/12-Strange-Looking-Yoga-Poses.jpg' %}" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <h3>Autumn Leaf</h3>
+                <span>5 photos / Nature</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+            <a class="image-gradient" href="single.html">
+              <figure>
+                <img src="{% static 'images/childs_pose_NEW.png' %}" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <h3>Sea Creatures</h3>
+                <span>5 photos / Nature</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+            <a class="image-gradient" href="single.html">
+              <figure>
+                <img src="{% static 'images/1246410589-H.jpg' %}" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <h3>Enjoying Deep Sea</h3>
+                <span>5 photos / Nature</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+            <a class="image-gradient" href="single.html">
+              <figure>
+                <img src="{% static 'images/pexels-photo-2294353.jpeg' %}" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <h3>Beautiful Beach</h3>
+                <span>5 photos / Nature</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <a class="image-gradient" href="single.html">
+              <figure>
+                <img src="{% static 'images/14-Best-Yoga-Asanas-That-Boost-Fertility-624x702.jpg' %}" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <h3>Laughter is Science</h3>
+                <span>5 photos / Nature</span>
+              </div>
+            </a>
+          </div>
+          <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+            <a class="image-gradient" href="single.html">
+              <figure>
+                <img src="{% static 'images/woman-doing-bow-yoga-pose-outside.jpg' %}" alt="" class="img-fluid">
+              </figure>
+              <div class="text">
+                <h3>Knot Tying</h3>
+                <span>5 photos / Nature</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+<div class="py-3 mb-5 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 d-md-flex align-items-center" data-aos="fade">
+            <h2 class="text-black mb-5 mb-md-0 text-center text-md-left">Need a Yoga Instructor?</h2>
+            <div class="ml-auto text-center text-md-left">
+             <a href="{% url 'bookinstructor' %}" class="btn btn-danger py-3 px-5 rounded">Contact Me</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
 
 {% endblock %}

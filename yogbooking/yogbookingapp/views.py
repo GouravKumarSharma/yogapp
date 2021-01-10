@@ -42,3 +42,6 @@ def parkyoga(request):
 def kidyoga(request):
     services = Services.objects.filter(id = 'kidyoga')
     return render(request,'yogbookingapp/service.html',{'services' : services})
+def bookinstructor(request):
+    services = Services.objects.all()
+    return render(request,'yogbookingapp/booknow.html',{'services' : services})
