@@ -4,7 +4,7 @@
          <h1>Login</h1>
          <form method="POST">
            {% csrf_token %}
-           {{ form|crispy }}
+           {{ form }}
            <button class="btn btn-primary" type="submit">Login</button>
          </form>
          <p class="text-center">Don't have an account? <a href="{% url 'dashboard' %}">Create an account</a>.</p>
