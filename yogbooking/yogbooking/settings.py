@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'yogbookingapp',
     'login',
-    'crispy_forms'
+    
 ]
 
 MIDDLEWARE = [
