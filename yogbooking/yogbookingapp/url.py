@@ -1,10 +1,10 @@
 from django.contrib import admin
 from django.urls import path,include
 from . import views
-
-
+admin.site.site_header="Yogbooking.com"
+admin.site.site_title="Welcome To Yogbooking.com"
+admin.site.index_title="Yogbooking.com"
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('',views.index,name='index'),
     path('services',views.services,name = 'services'),
     path('about/',views.about,name = 'about'),
@@ -19,6 +19,8 @@ urlpatterns = [
     path('groupyoga',views.groupyoga,name="groupyoga"),
     path('parkyoga',views.parkyoga,name="parkyoga"),
     path('kidyoga',views.kidyoga,name="kidyoga"),
-    path('BookNow',views.bookinstructor,name="bookinstructor")
+    path('BookNow',views.bookinstructor,name="bookinstructor"),
+    path('Dashboard',views.dashboard,name = 'dashboard'),
+    path('Success',views.success,name='success')
 
 ]

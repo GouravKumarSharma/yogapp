@@ -80,6 +80,17 @@
                 <li><a href="{% url 'shop' %}">Shop</a></li>
                 <li><a href="{% url 'about' %}">About</a></li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
+                {% if user.is_Active %}
+
+
+        <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+      {% else %}
+
+       
+
+
+      {% endif %}
+
 
               </ul>
             </nav>
@@ -209,6 +220,8 @@
   $(document).ready(function(){
     $('#lightgallery').lightGallery();
   });
+
+
 </script>
 
 </body>

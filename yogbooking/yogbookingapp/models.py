@@ -25,10 +25,17 @@ class Blog(models.Model):
         return self.name
 
 class Booking(models.Model):
-    city = models.CharField(max_length=50, default="")
+    name = models.CharField(max_length=50, default="")
+    mobile = models.IntegerField(default=0)
+    email = models.EmailField(default = "none")
+    injury = models.CharField(max_length=50, default="")
+    #city = models.CharField(max_length=50, default="")
     address = models.CharField(max_length=20, default="")
     no_of_students = models.IntegerField(default=0)
-    date_of_event = models.DateField()
+    date_of_event = models.DateField(blank=True, null=True,default = "none")
+    service = models.CharField(max_length=50, default="")
+    msg = models.CharField(max_length=200,default='')
+    payment_id=models.CharField(max_length=50,default="")
     def __str__(self):
         return self.name
 class Upcommingevent(models.Model):

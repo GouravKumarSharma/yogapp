@@ -1,188 +1,173 @@
+{% extends 'yogbookingapp/master.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <style media="screen">
+{% block content %} 
 
-.get-in-touch {
-  max-width: 800px;
-  margin: 50px auto;
-  position: relative;
+{% load crispy_forms_tags %}       
 
-}
-.get-in-touch .title {
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 3.2em;
-  line-height: 48px;
-  padding-bottom: 48px;
-     color: #5543ca;
-    background: #5543ca;
-    background: -moz-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
-    background: -webkit-linear-gradient(left,#f4524d  0%,#5543ca 100%) !important;
-    background: linear-gradient(to right,#f4524d  0%,#5543ca  100%) !important;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-}
+<!--Register--> 
 
-.contact-form .form-field {
-  position: relative;
-  margin: 32px 0;
-}
-.contact-form .input-text {
-  display: block;
-  width: 100%;
-  height: 36px;
-  border-width: 0 0 2px 0;
-  border-color: #5543ca;
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 400;
-}
-.contact-form .input-text:focus {
-  outline: none;
-}
-.contact-form .input-text:focus + .label,
-.contact-form .input-text.not-empty + .label {
-  -webkit-transform: translateY(-24px);
-          transform: translateY(-24px);
-}
-.contact-form .label {
-  position: absolute;
-  left: 20px;
-  bottom: 11px;
-  font-size: 18px;
-  line-height: 26px;
-  font-weight: 400;
-  color: #5543ca;
-  cursor: text;
-  transition: -webkit-transform .2s ease-in-out;
-  transition: transform .2s ease-in-out;
-  transition: transform .2s ease-in-out,
-  -webkit-transform .2s ease-in-out;
-}
-.contact-form .submit-btn {
-  display: inline-block;
-  background-color: #000;
-   background-image: linear-gradient(125deg,#a72879,#064497);
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 16px;
-  padding: 8px 16px;
-  border: none;
-  width:200px;
-  cursor: pointer;
-}
+<div class="container py-5">
+	
+	<form method="POST">
+	{% csrf_token %}
+		<!-- form user info -->
+            <div class="card card-outline-secondary">
+              <div class="card-header">
+                <h3 class="mb-0"> Apply For Instractor</h3>
+              </div>
+              <div class="card-body">
+                <form autocomplete="off" class="form" role="form">
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Full name</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" name='name' type="text" placeholder="Jane" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Father's name</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="text" name='fname' placeholder="Bishop">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Email</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="email" name='email' required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">mobile</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" name='mobile' type="number" placeholder="+91 " required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Aadhar</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="Number" name='aadhar' placeholder="" required>
+                    </div>
+                  </div>
+                  
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Date Of Birth</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="date" name='dob' required>
+                    </div>
+                  </div>
+				   <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Job Location</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="text" name='joblocation' placeholder="job location" required>
+                    </div>
+                  </div>
+				  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Qualification</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="text" name='qualification' placeholder="BA,MA,minimum 12th are Requred" required>
+                    </div>
+                  </div>
+				<div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">City</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="text" name='city' placeholder="" required>
+                    </div>
+                  </div>
+				  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Address</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="text" name='address' placeholder="" required>
+                    </div>
+                  </div>
+				  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Experiance</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="text" name='exp' placeholder="" required>
+                    </div>
+                  </div>
+				  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"> Upload Resume</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="FILE" name='resume' placeholder="Resume" required>
+                    </div>
+                  </div>
+				  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"> Upload Profile</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="FILE" name='profile' placeholder="Resume" required>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Password</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="password" name="password" required> 
+												<small class="form-text text-muted" id="passwordHelpBlock">Your password must be 8-20 characters long, contain letters and numbers, and must not contain spaces, special characters, or emoji.</small>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label">Confirm</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="password" name="cpassword" required>
+                    </div>
+                  </div>
 
+					<div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"> Upload Four image in yoga pose.</label>
+                    <div class="col-lg-9">
+                      <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"> Pic 1</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="FILE" name='pic1' placeholder="Resume" required>
+                    </div>
+                  </div>
+				  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"> Pic 2</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="FILE" name='pic2' placeholder="Resume" required>
+                    </div>
+                  </div>
+				  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"> Pic 3</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="FILE" name='pic3' placeholder="Resume" required>
+                    </div>
+                  </div>
+				  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"> Pic 4</label>
+                    <div class="col-lg-9">
+                      <input class="form-control" type="FILE" name='pic4' placeholder="Resume" required>
+                    </div>
+                  </div>
+                    </div>
+                  </div>
 
-  </style>
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-  <body>
-<div class="container">
-  <div class="row">
-
-  <section class="get-in-touch">
-     <h1 class="title">Apply for Instructor</h1>
-     <form class="contact-form row" method="POST">
-       {% csrf_token %}
-        <div class="form-field col-lg-6">
-           <input name="name" class="input-text js-input" type="text" required>
-           <label class="label" for="name">Name</label>
+                  <div class="form-group row">
+                    <label class="col-lg-3 col-form-label form-control-label"></label>
+                    <div class="col-lg-9">
+                      <input class="btn btn-secondary" type="reset" value="Reset"> 
+											<input class="btn btn-primary" type="submit" Value="Submit">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div><!-- /form user info -->
+          </div>
         </div>
-        <div class="form-field col-lg-6">
-           <input name="fname" class="input-text js-input" type="text" required>
-           <label class="label" for="name">Father's Name</label>
-        </div>
-        <div class="form-field col-lg-6 ">
-           <input name="email" class="input-text js-input" type="email" required>
-           <label class="label" for="email">E-mail</label>
-        </div>
-
-         <div class="form-field col-lg-6 ">
-           <input name="aadhar" class="input-text js-input" type="text" required>
-           <label class="label" for="aadhar">Aadhar Number</label>
-        </div>
-        <div class="form-field col-lg-6 ">
-          <input name="mobile" class="input-text js-input" type="text" required>
-          <label class="label" for="phone">Contact Number</label>
-       </div>
-       <div class="form-field col-lg-6 ">
-         <input name="city" class="input-text js-input" type="text" required>
-         <label class="label" for="phone">City</label>
-      </div>
-        <div class="form-field col-lg-12">
-           <input name="address" class="input-text js-input" type="text" required>
-           <label class="label" for="address">Address </label>
-        </div>
-        <div class="form-field col-lg-6 ">
-          <input name="qualification" class="input-text js-input" type="text" required>
-          <label class="label" for="phone">Qualification</label>
-       </div>
-        <div class="form-field col-lg-6 ">
-          <input name="experiance" class="input-text js-input" type="text" required>
-          <label class="label" for="phone">Experiance</label>
-       </div>
-       <div class="form-field col-lg-6 ">
-         <input name="password" class="input-text js-input" type="password" required>
-         <label class="label" for="phone">Password</label>
-      </div>
-       <div class="form-field col-lg-6 ">
-         <input name="dob" class="input-text js-input" type="date" required>
-         <label class="label" for="phone">DOB</label>
-      </div>
-      <div class="form-field col-lg-12 ">
-        <input name="jobloc" class="input-text js-input" type="text" required>
-        <label class="label" for="phone">Job Location</label>
-     </div>
-     <div class="custom-file">
-        <input type="file" name="resume" class="custom-file-input" id="inputGroupFile01">
-        <label class="custom-file-label" for="inputGroupFile01">Upload Resume</label>
-      </div>
-     <div class="custom-file">
-        <input type="file" name="profile" class="custom-file-input" id="inputGroupFile01">
-        <label class="custom-file-label" for="inputGroupFile01">Profile Picture</label>
-      </div>
-     <div class="forimage">
-       <h5>Upload Four Images doing Yoga..</h5>
-
-     </div>
-<div class="custom-file">
-   <input type="file" name="pic1" class="custom-file-input" id="inputGroupFile01">
-   <label class="custom-file-label" for="inputGroupFile01">Upload Picture 1</label>
- </div>
- <div class="custom-file">
-    <input type="file" name="pic2" class="custom-file-input" id="inputGroupFile01">
-    <label class="custom-file-label" for="inputGroupFile01">Upload Picture 1</label>
-  </div>
-
- <div class="custom-file">
-    <input type="file" name="pic3" class="custom-file-input" id="inputGroupFile01">
-    <label class="custom-file-label" for="inputGroupFile01">Upload Picture 1</label>
-  </div>
-  <div class="custom-file">
-     <input type="file" name="pic4" class="custom-file-input" id="inputGroupFile01">
-     <label class="custom-file-label" for="inputGroupFile01">Upload Picture 1</label>
-   </div>
-
-
-        <div class="form-field col-lg-12">
-           <input class="submit-btn" type="submit" value="Sign Up">
-        </div>
-     </form>
-  </section>
-
-  </div>
-
+		 <script
+      src="https://checkout.razorpay.com/v1/checkout.js"
+      data-key="rzp_test_Dr4vACZpQp5l9V" // Enter the Test API Key ID generated from Dashboard → Settings → API Keys
+      data-amount="19900" // Amount is in currency subunits. Hence, 29935 refers to 29935 paise or ₹299.35.
+      data-currency="INR"//You can accept international payments by changing the currency code. Contact our Support Team to enable International for your account
+      data-order_id="{{payment.id}}"//Replace with the order_id generated by you in the backend.
+      data-buttontext=""
+      data-name="Yogbooking.com"
+      data-description="Yogbooking description"
+      data-image="{% static 'images/logo.png'%}"
+      data-prefill.name="Akash Kumar"
+      data-prefill.email="akashdhiman025@gmail.com"
+      data-theme.color="#009686"
+  ></script>
+	</form>
+	<p class="text-center">If you already have an account, <a href="{% url 'login' %}">login</a> instead.</p>
 </div>
 
-  </body>
-</html>
+{% endblock %}
