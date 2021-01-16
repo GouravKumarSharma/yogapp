@@ -1,1 +1,2 @@
-
+pip install crispy_forms
+pip install rozarpay
